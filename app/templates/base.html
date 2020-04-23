@@ -4,8 +4,32 @@
     {% if title %}{{ title }} - Knowland{% else %}{{ _('Добро пожаловать в Knowland') }}{% endif %}
 {% endblock %}
 
+{% block head %}
+    <style>
+        hr {
+        border: none;
+        color: #949494;
+        background-color: #949494;
+        height: 1px;
+        }
+
+        #nav-MyFont{
+        font-family:Georgia, 'Times New Roman', Times, serif;
+        font-size:medium;
+        }
+
+        body{
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+    <body style="background-color: #EEEEEE"></body>
+{% endblock %}
+
 {% block navbar %}
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-default navbar-inverse" style=" background-color: #3E3F3A" id="nav-MyFont">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -74,5 +98,5 @@
                 $(destElem).text("{{ _('Error: Could not contact server.') }}");
             });
         }
-    </script> -->
-{% endblock %}
+    </script>
+{% endblock %}-->
