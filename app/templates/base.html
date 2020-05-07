@@ -42,6 +42,14 @@
             background-color: #C2E1D2;
             border-color: #6CC499;
         }
+
+        p {
+            text-indent: 20px; /* Отступ первой строки */
+        }
+
+        #Verhnee_podch {
+            text-decoration: overline;
+        }
     </style>
 {% endblock %}
 
@@ -84,22 +92,43 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container" id="DIV_M">
-        <br>
-        <br>
-        <br>
-        {% with messages = get_flashed_messages() %}
-        {% if messages %}
-            {% for message in messages %}
-            <div class="alert alert-info" role="alert">{{ message }}</div>
-            {% endfor %}
-        {% endif %}
-        {% endwith %}
 
-        {# application content needs to be provided in the app_content block #}
-        {% block app_content %}{% endblock %}
-        <br>
-        <br>
+    <div class="row">
+        <div class="col-md-2"><!--блок для рекламы-->
+            <br>
+            <br>
+            <br>
+            <div>
+                <img src="#" alt="реклама">
+            </div>
+        </div>
+
+        <div class="container col-md-8" id="DIV_M">
+            <br>
+            <br>
+            <br>
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                <div class="alert alert-info" role="alert">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+            {% endwith %}
+
+            {# application content needs to be provided in the app_content block #}
+            {% block app_content %}{% endblock %}
+            <br>
+            <br>
+        </div>
+
+        <div class="col-md-2"><!--блок для рекламы-->
+            <br>
+            <br>
+            <br>
+            <div>
+                <img src="img/advertisment.png" alt="здесь могла быть ваша реклама">
+            </div>
+        </div>
     </div>
 {% endblock %}
 

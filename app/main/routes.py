@@ -168,3 +168,9 @@ def course_1():
 def integrals():
     return render_template('integrals.html', title=_('Интегралы'))
 
+
+@bp.route('/definite_integral', methods=['GET', 'POST'])
+@login_required
+def definite_integral():
+    return render_template('definite_integral.html', title=_('Определенный интеграл'))
+
