@@ -72,6 +72,7 @@ class User(UserMixin, db.Model):
         primaryjoin=(followers.c.follower_id == id),
         secondaryjoin=(followers.c.followed_id == id),
         backref=db.backref('followers', lazy='dynamic'), lazy='dynamic')
+    land_coin = db.Column(db.Integer, default=0)
 
     def __repr__(self):
         return '<User {}>'.format(self.username)

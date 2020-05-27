@@ -172,5 +172,16 @@ def integrals():
 @bp.route('/definite_integral', methods=['GET', 'POST'])
 @login_required
 def definite_integral():
+    if current_user.land_coin is None:
+        current_user.land_coin = 1
+    else:
+        current_user.land_coin = current_user.land_coin + 1
+    db.session.commit()
     return render_template('definite_integral.html', title=_('Определенный интеграл'))
+
+
+@bp.route('/coins', methods=['GET', 'POST'])
+@login_required
+def coins():
+    return render_template('_coins.html', title=_('KnowLand_Coins'))
 

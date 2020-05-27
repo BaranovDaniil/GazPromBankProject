@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+<meta charset =  utf-8>
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block app_content %}
+    <h4>Баланс ваших монеток доступен в вашем профиле.</h4>
+    <h3>За что можно получить монетки?</h3>
+    <hr>
+
+    <div style="background-color: #86DEB3; border-radius: 10px; padding: 2%;">
+        Изучение нового материала. (+1 Coin)
+    </div>
+
+    <br>
+
+    <div style="background-color: #FFB7FF; border-radius: 10px; padding: 2%;">
+        Переход по рекламным ссылкам. (+2 coin)
+   
+    </div>
+
+    <br>
+
+    <div style="background-color: #FFDB74; border-radius: 10px; padding: 2%;">
+        Прохождение тестов. (+5 coin)
+    
+    </div>
+ 
+{% endblock %}
