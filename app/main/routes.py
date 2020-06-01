@@ -196,3 +196,9 @@ def number_series():
 def coins():
     return render_template('_coins.html', title=_('KnowLand_Coins'))
 
+
+@bp.route('/shop', methods=['GET', 'POST'])
+@login_required
+def coins():
+    return render_template('shop.html', title=_('KnowLand_Shop'))
+

@@ -9,6 +9,7 @@
             <td>
                 <h1>{{ _('Пользователь') }}: {{ user.username }}</h1>
                 <p style="color:#FFB200"><a href="#"> {{ _('LAND_COIN') }}:</a> {{ user.land_coin }}Ⓚ </p>
+                <p style="color:#FFB200"><a href="{{ url_for('main.shop') }}">{{ _('Knowland_Shop')}}</a></p>
                 {% if user.about_me %}<p>{{ user.about_me }}</p>{% endif %}
                 {% if user.last_seen %}
                 <p>{{ _('Последнее посещение ') }}: {{ moment(user.last_seen).format('LLL') }}</p>
