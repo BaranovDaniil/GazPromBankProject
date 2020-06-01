@@ -180,6 +180,17 @@ def definite_integral():
     return render_template('definite_integral.html', title=_('Определенный интеграл'))
 
 
+@bp.route('/number_series', methods=['GET', 'POST'])
+@login_required
+def number_series():
+    if current_user.land_coin is None:
+        current_user.land_coin = 1
+    else:
+        current_user.land_coin = current_user.land_coin + 1
+    db.session.commit()
+    return render_template('number_series.html', title=_('Числовые ряды'))
+
+
 @bp.route('/coins', methods=['GET', 'POST'])
 @login_required
 def coins():
