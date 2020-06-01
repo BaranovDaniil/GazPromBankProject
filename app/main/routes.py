@@ -199,6 +199,6 @@ def coins():
 
 @bp.route('/shop', methods=['GET', 'POST'])
 @login_required
-def coins():
+def shop():
     return render_template('shop.html', title=_('KnowLand_Shop'))
 
