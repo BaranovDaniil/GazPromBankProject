@@ -280,7 +280,8 @@ def reclama():
         else:
             current_user.land_coin = current_user.land_coin + 2
         db.session.commit()
-    webbrowser.open('https://mcdonalds.ru/', new=2)
+    webbrowser.get(using=None).open_new_tab('https://mcdonalds.ru/')
+    #webbrowser.open('https://mcdonalds.ru/', new=2)
     return redirect(url_for('main.index'))
 
 
