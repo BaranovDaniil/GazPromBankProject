@@ -10,6 +10,7 @@ from app.main.forms import EditProfileForm, PostForm, SearchForm
 from app.models import User, Post
 from app.translate import translate
 from app.main import bp
+import webbrowser
 
 
 @bp.before_app_request
@@ -163,6 +164,24 @@ def course_1():
     return render_template('1_course.html', title=_('1 КУРС'))
 
 
+@bp.route('/course1_PIE', methods=['GET', 'POST'])
+@login_required
+def course1_PIE():
+    return render_template('1_course_PIE.html', title=_('1 КУРС ПИЭ'))
+
+
+@bp.route('/course1_PMI', methods=['GET', 'POST'])
+@login_required
+def course1_PMI():
+    return render_template('1_course_PMI.html', title=_('1 КУРС ПМИ'))
+
+
+@bp.route('/course1_FIIT', methods=['GET', 'POST'])
+@login_required
+def course1_FIIT():
+    return render_template('1_course_PMI.html', title=_('1 КУРС ФИИТ'))
+
+
 @bp.route('/integrals', methods=['GET', 'POST'])
 @login_required
 def integrals():
@@ -191,6 +210,17 @@ def number_series():
     return render_template('number_series.html', title=_('Числовые ряды'))
 
 
+@bp.route('/leibniz', methods=['GET', 'POST'])
+@login_required
+def leibniz():
+    if current_user.land_coin is None:
+        current_user.land_coin = 1
+    else:
+        current_user.land_coin = current_user.land_coin + 1
+    db.session.commit()
+    return render_template('leibniz.html', title=_('Признак Лейбница'))
+
+
 @bp.route('/coins', methods=['GET', 'POST'])
 @login_required
 def coins():
@@ -201,4 +231,80 @@ def coins():
 @login_required
 def shop():
     return render_template('shop.html', title=_('KnowLand_Shop'))
+
+
+@bp.route('/shop_1', methods=['GET', 'POST'])
+@login_required
+def shop_1():
+    if current_user.land_coin >= 10:
+        current_user.land_coin -= 10
+        db.session.commit()
+        webbrowser.open('https://wikium.ru/')
+        return render_template('shop.html', title=_('KnowLand_Shop'))
+    else:
+        flash('К сожалению, у вас не хватает монеток.')
+        return render_template('shop.html', title=_('KnowLand_Shop'))
+
+
+@bp.route('/shop_2', methods=['GET', 'POST'])
+@login_required
+def shop_2():
+    if current_user.land_coin >= 50:
+        current_user.land_coin -= 50
+        db.session.commit()
+        webbrowser.open('https://cutt.ly/OyX5vBz')
+        return render_template('shop.html', title=_('KnowLand_Shop'))
+    else:
+        flash('К сожалению, у вас не хватает монеток.')
+        return render_template('shop.html', title=_('KnowLand_Shop'))
+
+
+@bp.route('/shop_3', methods=['GET', 'POST'])
+@login_required
+def shop_3():
+    if current_user.land_coin >= 50:
+        current_user.land_coin -= 50
+        db.session.commit()
+        webbrowser.open('https://videoforme.ru/')
+        return render_template('shop.html', title=_('KnowLand_Shop'))
+    else:
+        flash('К сожалению, у вас не хватает монеток.')
+        return render_template('shop.html', title=_('KnowLand_Shop'))
+
+
+@bp.route('/reclama', methods=['GET', 'POST'])
+def reclama():
+    if current_user.is_authenticated:
+        if current_user.land_coin is None:
+            current_user.land_coin = 2
+        else:
+            current_user.land_coin = current_user.land_coin + 2
+        db.session.commit()
+    webbrowser.open('https://mcdonalds.ru/')
+    return redirect(url_for('main.index'))
+
+
+@bp.route('/test', methods=['GET', 'POST'])
+@login_required
+def test():
+    return render_template('test.html')
+
+
+@bp.route('/testgood', methods=['GET', 'POST'])
+@login_required
+def testgood():
+    if current_user.land_coin is None:
+        current_user.land_coin = 5
+    else:
+        current_user.land_coin = current_user.land_coin + 5
+    db.session.commit()
+    flash('Вы успешно прошли тест!')
+    return render_template('study_start.html')
+
+
+@bp.route('/testbad', methods=['GET', 'POST'])
+@login_required
+def testbad():
+    flash('Вы провалили тест!')
+    return render_template('study_start.html')
 

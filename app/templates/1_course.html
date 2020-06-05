@@ -3,8 +3,8 @@
 {% import 'bootstrap/wtf.html' as wtf %}
 
 {% block app_content %}
-    <h1>{{ _('Здесь находятся предметы 1 курсов.') }}</h1>
-    <p><a href="{{ url_for('main.integrals') }}">{{ _('Интегралы') }}</a></p>
-    <p><a href="{{ url_for('main.definite_integral') }}">{{ _('Определенный интеграл') }}</a></p>
-    <p><a href="{{ url_for('main.number_series') }}">{{ _('Числовые ряды') }}</a></p>
+    <h1>{{ _('Здесь находятся темы 1 курсов.') }}</h1>
+    <h2><p><a href="{{ url_for('main.course1_PIE') }}">{{ _('ПИЭ') }}</a></p></h2>
+    <h2><p><a href="{{ url_for('main.course1_PMI') }}">{{ _('ПМИ') }}</a></p></h2>
+    <h2><p><a href="{{ url_for('main.course1_FIIT') }}">{{ _('ФИИТ') }}</a></p></h2>
 {% endblock %}

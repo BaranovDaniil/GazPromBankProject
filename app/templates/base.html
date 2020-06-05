@@ -71,6 +71,11 @@
                     <li><a href="{{ url_for('main.explore') }}">{{ _('Чат') }}</a></li>
                     <li><a href="{{ url_for('main.study') }}">{{ _('Начинаем учиться') }}</a></li>
                     <li><a href="{{ url_for('main.coins') }}">{{ _('KnowLand_Coins') }}</a></li>
+                    {% if current_user.is_anonymous %}
+                    { }
+                    {% else %}
+                    <li><a href="{{ url_for('main.shop') }}">Ваш Баланс:{{current_user.land_coin }}Ⓚ</a></li>
+                    {% endif %}
                 </ul>
                 <!-- {% if g.search_form %}
                 <form class="navbar-form navbar-left" method="get" action="{{ url_for('main.search') }}">
@@ -101,7 +106,7 @@
             <br>
             <div>
                 <img class = 'ads_ad_photo_adv'
-                     src="https://www.meme-arsenal.com/memes/083fdb97e7f2ed07af30aa359b1b1e5a.jpg" alt="здесь могла быть ваша реклама" width="200" height="500"/>
+                     src="https://www.meme-arsenal.com/memes/083fdb97e7f2ed07af30aa359b1b1e5a.jpg" alt="здесь могла быть ваша реклама" width="225" height="500"/>
             </div>
         </div>
 
@@ -122,17 +127,18 @@
             <br>
             <br>
         </div>
-
         <div class="col-md-2"><!--блок для рекламы-->
             <br>
             <br>
             <br>
             <div>
-                <img class = 'ads_ad_photo'
-                     src="https://i.pinimg.com/originals/64/d0/2b/64d02baf5ab0ca725d493dee762dc0b7.jpg" alt="здесь могла быть ваша реклама" width="200" height="500"/>
+                <a href="{{ url_for('main.reclama') }}"><img class = 'ads_ad_photo'
+                     src="https://i.pinimg.com/originals/64/d0/2b/64d02baf5ab0ca725d493dee762dc0b7.jpg" alt="здесь могла быть ваша реклама" width="225" height="500"/>
+                </a>
             </div>
         </div>
     </div>
+    <footer style="background-color: #EEEEEE; border-radius: 10px; padding: 2%;" align="center"> danyabaranov2020@gmail.com - Почта тех.поддержки.</footer>
 {% endblock %}
 
 <!-- {% block scripts %}

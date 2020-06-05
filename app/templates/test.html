@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+<meta charset =  utf-8>
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block app_content %}
+    <h3>1 задача</h3>
+    <img src = 'https://lh4.googleusercontent.com/uj16xqK7CFItS8XzdsRnMARNSyKgRf7fqOiGiuGiWifs06aC5AtqKYxh15Pngd04kxqR6OJNz1v_NhGF7RKSfcfBQQjZeDuY6aTjU3HQEiPows0i71Y=w1280'>
+    <h2>
+        Ваш ответ:
+    </h2>
+    <h3>
+    <a href="{{ url_for('main.testgood') }}">{{ _('сходится') }}</a>
+        </h3>
+    <h3>
+        <a href="{{ url_for('main.testbad') }}">{{ _('не сходится') }}</a>
+    </h3>
+{% endblock %}

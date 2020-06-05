@@ -1,4 +1,28 @@
-2020-06-04 12:48:27,700 ERROR: Exception on /reclama [GET] [in c:\users\super\knowland\knowland_start\lib\site-packages\flask\app.py:1890]
+2020-05-27 10:51:19,451 INFO: Knowland startup [in C:\Users\super\Knowland\app\__init__.py:83]
+2020-05-27 10:54:52,993 INFO: Knowland startup [in C:\Users\super\Knowland\app\__init__.py:83]
+2020-05-27 11:00:54,919 INFO: Knowland startup [in C:\Users\super\Knowland\app\__init__.py:83]
+2020-05-27 11:03:34,974 INFO: Knowland startup [in C:\Users\super\Knowland\app\__init__.py:83]
+2020-05-27 11:05:54,182 INFO: Knowland startup [in C:\Users\super\Knowland\app\__init__.py:83]
+2020-05-27 11:07:06,314 INFO: Knowland startup [in C:\Users\super\Knowland\app\__init__.py:83]
+2020-06-01 10:27:49,582 INFO: Knowland startup [in C:\Users\super\Knowland\app\__init__.py:83]
+2020-06-01 10:28:43,965 INFO: Knowland startup [in C:\Users\super\Knowland\app\__init__.py:83]
+2020-06-03 09:42:12,826 INFO: Knowland startup [in C:\Users\super\Knowland\app\__init__.py:83]
+2020-06-03 09:53:45,941 INFO: Knowland startup [in C:\Users\super\Knowland\app\__init__.py:83]
+2020-06-03 09:54:42,302 INFO: Knowland startup [in C:\Users\super\Knowland\app\__init__.py:83]
+2020-06-03 09:55:02,042 ERROR: Exception on /shop_1 [GET] [in c:\users\super\knowland\knowland_start\lib\site-packages\flask\app.py:1890]
+Traceback (most recent call last):
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\flask\app.py", line 1967, in finalize_request
+    response = self.make_response(rv)
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\flask\app.py", line 2096, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The function either returned None or ended without a return statement.
+2020-06-03 09:56:20,391 INFO: Knowland startup [in C:\Users\super\Knowland\app\__init__.py:83]
+2020-06-03 10:08:32,786 INFO: Knowland startup [in C:\Users\super\Knowland\app\__init__.py:83]
+2020-06-03 10:08:46,351 ERROR: Exception on /shop [GET] [in c:\users\super\knowland\knowland_start\lib\site-packages\flask\app.py:1890]
 Traceback (most recent call last):
   File "c:\users\super\knowland\knowland_start\lib\site-packages\flask\app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -14,7 +38,7 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "c:\users\super\knowland\knowland_start\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
-  File "C:\Users\super\Knowland\app\main\routes.py", line 280, in reclama
+  File "C:\Users\super\Knowland\app\main\routes.py", line 203, in shop
     return render_template('shop.html', title=_('KnowLand_Shop'))
   File "c:\users\super\knowland\knowland_start\lib\site-packages\flask\templating.py", line 137, in render_template
     return _render(
@@ -41,7 +65,7 @@ Traceback (most recent call last):
   File "C:\Users\super\Knowland\app\templates\base.html", line 121, in block "content"
     {% block app_content %}{% endblock %}
   File "C:\Users\super\Knowland\app\templates\shop.html", line 31, in block "app_content"
-    <a href="{{ url_for('main.shop_4') }}">{{ _('Cкидка 30% на выбранный курс Skillbox') }}</a> {{ ('100 coin') }}
+    <a href="{{ url_for('main.shop_4') }}">{{ _('Cкидка 30% на выбранный курс Skillbox') }}</a>(100 coin)
   File "c:\users\super\knowland\knowland_start\lib\site-packages\jinja2\ext.py", line 144, in _gettext_alias
     return __context.call(__context.resolve("gettext"), *args, **kwargs)
   File "c:\users\super\knowland\knowland_start\lib\site-packages\jinja2\ext.py", line 156, in gettext
@@ -49,49 +73,8 @@ Traceback (most recent call last):
   File "c:\users\super\knowland\knowland_start\lib\site-packages\markupsafe\__init__.py", line 102, in __mod__
     return self.__class__(text_type.__mod__(self, arg))
 ValueError: unsupported format character '?' (0x43d) at index 11
-2020-06-04 12:49:33,706 INFO: Knowland startup [in C:\Users\super\Knowland\app\__init__.py:83]
-2020-06-04 12:51:50,640 INFO: Knowland startup [in C:\Users\super\Knowland\app\__init__.py:83]
-2020-06-04 12:52:00,694 ERROR: Exception on /reclama [GET] [in c:\users\super\knowland\knowland_start\lib\site-packages\flask\app.py:1890]
-Traceback (most recent call last):
-  File "c:\users\super\knowland\knowland_start\lib\site-packages\flask\app.py", line 2116, in make_response
-    rv = self.response_class.force_type(rv, request.environ)
-  File "c:\users\super\knowland\knowland_start\lib\site-packages\werkzeug\wrappers\base_response.py", line 269, in force_type
-    response = BaseResponse(*_run_wsgi_app(response, environ))
-  File "c:\users\super\knowland\knowland_start\lib\site-packages\werkzeug\wrappers\base_response.py", line 26, in _run_wsgi_app
-    return _run_wsgi_app(*args)
-  File "c:\users\super\knowland\knowland_start\lib\site-packages\werkzeug\test.py", line 1096, in run_wsgi_app
-    app_rv = app(environ, start_response)
-  File "c:\users\super\knowland\knowland_start\lib\site-packages\werkzeug\local.py", line 375, in <lambda>
-    __call__ = lambda x, *a, **kw: x._get_current_object()(*a, **kw)
-TypeError: 'Request' object is not callable
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "c:\users\super\knowland\knowland_start\lib\site-packages\flask\app.py", line 2446, in wsgi_app
-    response = self.full_dispatch_request()
-  File "c:\users\super\knowland\knowland_start\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
-    return self.finalize_request(rv)
-  File "c:\users\super\knowland\knowland_start\lib\site-packages\flask\app.py", line 1967, in finalize_request
-    response = self.make_response(rv)
-  File "c:\users\super\knowland\knowland_start\lib\site-packages\flask\app.py", line 2124, in make_response
-    reraise(TypeError, new_error, sys.exc_info()[2])
-  File "c:\users\super\knowland\knowland_start\lib\site-packages\flask\_compat.py", line 38, in reraise
-    raise value.with_traceback(tb)
-  File "c:\users\super\knowland\knowland_start\lib\site-packages\flask\app.py", line 2116, in make_response
-    rv = self.response_class.force_type(rv, request.environ)
-  File "c:\users\super\knowland\knowland_start\lib\site-packages\werkzeug\wrappers\base_response.py", line 269, in force_type
-    response = BaseResponse(*_run_wsgi_app(response, environ))
-  File "c:\users\super\knowland\knowland_start\lib\site-packages\werkzeug\wrappers\base_response.py", line 26, in _run_wsgi_app
-    return _run_wsgi_app(*args)
-  File "c:\users\super\knowland\knowland_start\lib\site-packages\werkzeug\test.py", line 1096, in run_wsgi_app
-    app_rv = app(environ, start_response)
-  File "c:\users\super\knowland\knowland_start\lib\site-packages\werkzeug\local.py", line 375, in <lambda>
-    __call__ = lambda x, *a, **kw: x._get_current_object()(*a, **kw)
-TypeError: 'Request' object is not callable
-The view function did not return a valid response. The return type must be a string, dict, tuple, Response instance, or WSGI callable, but it was a LocalProxy.
-2020-06-04 12:53:58,217 INFO: Knowland startup [in C:\Users\super\Knowland\app\__init__.py:83]
-2020-06-04 12:54:02,432 ERROR: Exception on /reclama [GET] [in c:\users\super\knowland\knowland_start\lib\site-packages\flask\app.py:1890]
+2020-06-03 10:11:31,836 INFO: Knowland startup [in C:\Users\super\Knowland\app\__init__.py:83]
+2020-06-03 10:11:41,570 ERROR: Exception on /shop [GET] [in c:\users\super\knowland\knowland_start\lib\site-packages\flask\app.py:1890]
 Traceback (most recent call last):
   File "c:\users\super\knowland\knowland_start\lib\site-packages\flask\app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -107,8 +90,8 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "c:\users\super\knowland\knowland_start\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
-  File "C:\Users\super\Knowland\app\main\routes.py", line 254, in reclama
-    return render_template('https://mcdonalds.ru/')
+  File "C:\Users\super\Knowland\app\main\routes.py", line 203, in shop
+    return render_template('shop.html', title=_('KnowLand_Shop'))
   File "c:\users\super\knowland\knowland_start\lib\site-packages\flask\templating.py", line 138, in render_template
     ctx.app.jinja_env.get_or_select_template(template_name_or_list),
   File "c:\users\super\knowland\knowland_start\lib\site-packages\jinja2\environment.py", line 930, in get_or_select_template
@@ -117,11 +100,15 @@ Traceback (most recent call last):
     return self._load_template(name, self.make_globals(globals))
   File "c:\users\super\knowland\knowland_start\lib\site-packages\jinja2\environment.py", line 857, in _load_template
     template = self.loader.load(self, name, globals)
-  File "c:\users\super\knowland\knowland_start\lib\site-packages\jinja2\loaders.py", line 117, in load
-    source, filename, uptodate = self.get_source(environment, name)
-  File "c:\users\super\knowland\knowland_start\lib\site-packages\flask\templating.py", line 60, in get_source
-    return self._get_source_fast(environment, template)
-  File "c:\users\super\knowland\knowland_start\lib\site-packages\flask\templating.py", line 89, in _get_source_fast
-    raise TemplateNotFound(template)
-jinja2.exceptions.TemplateNotFound: https://mcdonalds.ru/
-2020-06-04 12:57:27,075 INFO: Knowland startup [in C:\Users\super\Knowland\app\__init__.py:83]
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\jinja2\loaders.py", line 129, in load
+    code = environment.compile(source, name, filename)
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\jinja2\environment.py", line 638, in compile
+    self.handle_exception(source=source_hint)
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\super\Knowland\app\templates\shop.html", line 11, in template
+    <a href="{{ url_for('main.shop_1') }}">{{ _('Тренажер памяти') }}</a> {{ (10 coin) }}
+jinja2.exceptions.TemplateSyntaxError: expected token ')', got 'coin'
+2020-06-03 10:12:57,462 INFO: Knowland startup [in C:\Users\super\Knowland\app\__init__.py:83]

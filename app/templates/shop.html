@@ -3,26 +3,25 @@
 {% import 'bootstrap/wtf.html' as wtf %}
 
 {% block app_content %}
-    <h4>Баланс ваших монеток доступен в вашем профиле.</h4>
     <h3>Здесь вы можете потратить монетки :)</h3>
     <hr>
 
     <div style="background-color: #86DEB3; border-radius: 10px; padding: 2%;">
-        Первое (1000 Coin)
+        <a href="{{ url_for('main.shop_1') }}">{{ _('Тренажер памяти') }}</a> {{ ('10 coin') }}
     </div>
 
     <br>
 
     <div style="background-color: #FFB7FF; border-radius: 10px; padding: 2%;">
-        Второе (1500 coin)
-   
+        <a href="{{ url_for('main.shop_2') }}">{{ _('Поможет нанять репетитора, если это требуется при обучении в университете') }}</a> {{ ('50 coin') }}
+
     </div>
 
     <br>
 
     <div style="background-color: #FFDB74; border-radius: 10px; padding: 2%;">
-        Третье (2000 coin)
-    
+        <a href="{{ url_for('main.shop_3') }}">{{ _('Курсы дополнительного образования на любой вкус') }}</a> {{ ('50 coin') }}
+
     </div>
  
 {% endblock %}

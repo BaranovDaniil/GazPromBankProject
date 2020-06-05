@@ -1,4 +1,4 @@
-2020-06-05 12:56:26,276 ERROR: Exception on /shop [GET] [in c:\users\super\knowland\knowland_start\lib\site-packages\flask\app.py:1890]
+2020-05-18 18:56:15,961 ERROR: Exception on / [GET] [in c:\users\super\knowland\knowland_start\lib\site-packages\flask\app.py:1890]
 Traceback (most recent call last):
   File "c:\users\super\knowland\knowland_start\lib\site-packages\flask\app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -14,8 +14,8 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "c:\users\super\knowland\knowland_start\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
-  File "C:\Users\super\Knowland\app\main\routes.py", line 233, in shop
-    return render_template('shop.html', title=_('KnowLand_Shop'))
+  File "C:\Users\super\Knowland\app\main\routes.py", line 46, in index
+    return render_template('index.html', title=_('Домашняя страница'), form=form,
   File "c:\users\super\knowland\knowland_start\lib\site-packages\flask\templating.py", line 137, in render_template
     return _render(
   File "c:\users\super\knowland\knowland_start\lib\site-packages\flask\templating.py", line 120, in _render
@@ -26,7 +26,7 @@ Traceback (most recent call last):
     reraise(*rewrite_traceback_stack(source=source))
   File "c:\users\super\knowland\knowland_start\lib\site-packages\jinja2\_compat.py", line 28, in reraise
     raise value.with_traceback(tb)
-  File "C:\Users\super\Knowland\app\templates\shop.html", line 3, in top-level template code
+  File "C:\Users\super\Knowland\app\templates\index.html", line 3, in top-level template code
     {% import 'bootstrap/wtf.html' as wtf %}
   File "C:\Users\super\Knowland\app\templates\base.html", line 1, in top-level template code
     {% extends 'bootstrap/base.html' %}
@@ -36,21 +36,14 @@ Traceback (most recent call last):
     <html{% block html_attribs %}{% endblock html_attribs %}>
   File "c:\users\super\knowland\knowland_start\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 11, in block "html"
     {%- endblock metas %}
-  File "c:\users\super\knowland\knowland_start\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 13, in block "body"
-    {%- block styles %}
-  File "C:\Users\super\Knowland\app\templates\base.html", line 122, in block "content"
-    {% block app_content %}{% endblock %}
-  File "C:\Users\super\Knowland\app\templates\shop.html", line 30, in block "app_content"
-    <a href="{{ url_for('main.shop_4') }}">{{ _('Скидка 30% на выбранный курс Skillbox') }}</a> {{ ('100 coin') }}
-  File "c:\users\super\knowland\knowland_start\lib\site-packages\jinja2\ext.py", line 144, in _gettext_alias
-    return __context.call(__context.resolve("gettext"), *args, **kwargs)
-  File "c:\users\super\knowland\knowland_start\lib\site-packages\jinja2\ext.py", line 156, in gettext
-    return rv % variables
-  File "c:\users\super\knowland\knowland_start\lib\site-packages\markupsafe\__init__.py", line 102, in __mod__
-    return self.__class__(text_type.__mod__(self, arg))
-ValueError: unsupported format character '?' (0x43d) at index 11
-2020-06-05 12:58:33,640 INFO: Knowland startup [in C:\Users\super\Knowland\app\__init__.py:83]
-2020-06-05 12:58:39,022 ERROR: Exception on /shop [GET] [in c:\users\super\knowland\knowland_start\lib\site-packages\flask\app.py:1890]
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 12, in block "body"
+  File "C:\Users\super\Knowland\app\templates\base.html", line 73, in block "navbar"
+    <li><a >{{ _('LAND_COIN') }} : {{ user.land_coin }}</a></li>
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\jinja2\environment.py", line 471, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'user' is undefined
+2020-05-18 18:58:24,493 INFO: Knowland startup [in C:\Users\super\Knowland\app\__init__.py:83]
+2020-05-18 18:58:33,337 ERROR: Exception on / [GET] [in c:\users\super\knowland\knowland_start\lib\site-packages\flask\app.py:1890]
 Traceback (most recent call last):
   File "c:\users\super\knowland\knowland_start\lib\site-packages\flask\app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -66,8 +59,8 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "c:\users\super\knowland\knowland_start\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
-  File "C:\Users\super\Knowland\app\main\routes.py", line 233, in shop
-    return render_template('shop.html', title=_('KnowLand_Shop'))
+  File "C:\Users\super\Knowland\app\main\routes.py", line 46, in index
+    return render_template('index.html', title=_('Домашняя страница'), form=form,
   File "c:\users\super\knowland\knowland_start\lib\site-packages\flask\templating.py", line 137, in render_template
     return _render(
   File "c:\users\super\knowland\knowland_start\lib\site-packages\flask\templating.py", line 120, in _render
@@ -78,7 +71,7 @@ Traceback (most recent call last):
     reraise(*rewrite_traceback_stack(source=source))
   File "c:\users\super\knowland\knowland_start\lib\site-packages\jinja2\_compat.py", line 28, in reraise
     raise value.with_traceback(tb)
-  File "C:\Users\super\Knowland\app\templates\shop.html", line 3, in top-level template code
+  File "C:\Users\super\Knowland\app\templates\index.html", line 3, in top-level template code
     {% import 'bootstrap/wtf.html' as wtf %}
   File "C:\Users\super\Knowland\app\templates\base.html", line 1, in top-level template code
     {% extends 'bootstrap/base.html' %}
@@ -88,38 +81,12 @@ Traceback (most recent call last):
     <html{% block html_attribs %}{% endblock html_attribs %}>
   File "c:\users\super\knowland\knowland_start\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 11, in block "html"
     {%- endblock metas %}
-  File "c:\users\super\knowland\knowland_start\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 13, in block "body"
-    {%- block styles %}
-  File "C:\Users\super\Knowland\app\templates\base.html", line 122, in block "content"
-    {% block app_content %}{% endblock %}
-  File "C:\Users\super\Knowland\app\templates\shop.html", line 30, in block "app_content"
-    <a href="{{ url_for('main.shop_4') }}">{{ _('Скидка 30% на выбранный курс Skillbox') }}</a> {{ ('100 coin') }}
-  File "c:\users\super\knowland\knowland_start\lib\site-packages\jinja2\ext.py", line 144, in _gettext_alias
-    return __context.call(__context.resolve("gettext"), *args, **kwargs)
-  File "c:\users\super\knowland\knowland_start\lib\site-packages\jinja2\ext.py", line 156, in gettext
-    return rv % variables
-  File "c:\users\super\knowland\knowland_start\lib\site-packages\markupsafe\__init__.py", line 102, in __mod__
-    return self.__class__(text_type.__mod__(self, arg))
-ValueError: unsupported format character '?' (0x43d) at index 11
-2020-06-05 12:59:15,678 INFO: Knowland startup [in C:\Users\super\Knowland\app\__init__.py:83]
-2020-06-05 13:00:34,001 INFO: Knowland startup [in C:\Users\super\Knowland\app\__init__.py:83]
-2020-06-05 13:01:12,461 INFO: Knowland startup [in C:\Users\super\Knowland\app\__init__.py:83]
-2020-06-05 13:05:48,959 INFO: Knowland startup [in C:\Users\super\Knowland\app\__init__.py:83]
-2020-06-05 13:13:41,375 INFO: Knowland startup [in C:\Users\super\Knowland\app\__init__.py:83]
-2020-06-05 13:14:20,158 INFO: Knowland startup [in C:\Users\super\Knowland\app\__init__.py:83]
-2020-06-05 13:15:07,552 INFO: Knowland startup [in C:\Users\super\Knowland\app\__init__.py:83]
-2020-06-05 13:16:05,078 INFO: Knowland startup [in C:\Users\super\Knowland\app\__init__.py:83]
-2020-06-05 13:17:46,728 INFO: Knowland startup [in C:\Users\super\Knowland\app\__init__.py:83]
-2020-06-05 13:18:54,908 INFO: Knowland startup [in C:\Users\super\Knowland\app\__init__.py:83]
-2020-06-05 13:20:03,135 INFO: Knowland startup [in C:\Users\super\Knowland\app\__init__.py:83]
-2020-06-05 13:20:44,659 INFO: Knowland startup [in C:\Users\super\Knowland\app\__init__.py:83]
-2020-06-05 13:24:25,215 INFO: Knowland startup [in C:\Users\super\Knowland\app\__init__.py:83]
-2020-06-05 13:25:48,284 INFO: Knowland startup [in C:\Users\super\Knowland\app\__init__.py:83]
-2020-06-05 13:26:42,273 INFO: Knowland startup [in C:\Users\super\Knowland\app\__init__.py:83]
-2020-06-05 13:27:46,965 INFO: Knowland startup [in C:\Users\super\Knowland\app\__init__.py:83]
-2020-06-05 13:28:55,944 INFO: Knowland startup [in C:\Users\super\Knowland\app\__init__.py:83]
-2020-06-05 13:30:01,016 INFO: Knowland startup [in C:\Users\super\Knowland\app\__init__.py:83]
-2020-06-05 13:43:19,265 INFO: Knowland startup [in C:\Users\super\Knowland\app\__init__.py:83]
-2020-06-05 13:51:23,560 INFO: Knowland startup [in C:\Users\super\Knowland\app\__init__.py:83]
-2020-06-05 13:55:07,962 INFO: Knowland startup [in C:\Users\super\Knowland\app\__init__.py:83]
-2020-06-05 13:56:11,202 INFO: Knowland startup [in C:\Users\super\Knowland\app\__init__.py:83]
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 12, in block "body"
+  File "C:\Users\super\Knowland\app\templates\base.html", line 73, in block "navbar"
+    <li>{{ _('LAND_COIN') }} : {{ user.land_coin }}</li>
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\jinja2\environment.py", line 471, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'user' is undefined
+2020-05-18 19:00:38,597 INFO: Knowland startup [in C:\Users\super\Knowland\app\__init__.py:83]
+2020-05-20 13:03:29,132 INFO: Knowland startup [in C:\Users\super\Knowland\app\__init__.py:83]
+2020-05-27 10:48:42,663 INFO: Knowland startup [in C:\Users\super\Knowland\app\__init__.py:83]
