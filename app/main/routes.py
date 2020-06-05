@@ -239,7 +239,6 @@ def shop_1():
     if current_user.land_coin >= 10:
         current_user.land_coin -= 10
         db.session.commit()
-        flash('Обновите страничку для того, чтобы увидеть изменения вашего баланса.')
         return redirect('https://wikium.ru/')
     else:
         flash('К сожалению, у вас не хватает монеток.')
@@ -252,7 +251,6 @@ def shop_2():
     if current_user.land_coin >= 50:
         current_user.land_coin -= 50
         db.session.commit()
-        flash('Обновите страничку для того, чтобы увидеть изменения вашего баланса.')
         return redirect('https://cutt.ly/OyX5vBz')
     else:
         flash('К сожалению, у вас не хватает монеток.')
@@ -265,7 +263,6 @@ def shop_3():
     if current_user.land_coin >= 50:
         current_user.land_coin -= 50
         db.session.commit()
-        flash('Обновите страничку для того, чтобы увидеть изменения вашего баланса.')
         return redirect('https://videoforme.ru/')
     else:
         flash('К сожалению, у вас не хватает монеток.')
@@ -280,7 +277,6 @@ def reclama():
         else:
             current_user.land_coin = current_user.land_coin + 2
         db.session.commit()
-    flash('Обновите страничку для того, чтобы увидеть изменения вашего баланса.')
     return redirect("https://mcdonalds.ru/")
 
 
