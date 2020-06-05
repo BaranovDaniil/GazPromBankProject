@@ -239,8 +239,7 @@ def shop_1():
     if current_user.land_coin >= 10:
         current_user.land_coin -= 10
         db.session.commit()
-        webbrowser.open('https://wikium.ru/', new=2)
-        return render_template('shop.html', title=_('KnowLand_Shop'))
+        return redirect('https://wikium.ru/')
     else:
         flash('К сожалению, у вас не хватает монеток.')
         return render_template('shop.html', title=_('KnowLand_Shop'))
@@ -252,8 +251,7 @@ def shop_2():
     if current_user.land_coin >= 50:
         current_user.land_coin -= 50
         db.session.commit()
-        webbrowser.open('https://cutt.ly/OyX5vBz', new=2)
-        return render_template('shop.html', title=_('KnowLand_Shop'))
+        return redirect('https://cutt.ly/OyX5vBz')
     else:
         flash('К сожалению, у вас не хватает монеток.')
         return render_template('shop.html', title=_('KnowLand_Shop'))
@@ -265,8 +263,7 @@ def shop_3():
     if current_user.land_coin >= 50:
         current_user.land_coin -= 50
         db.session.commit()
-        webbrowser.open('https://videoforme.ru/', new=2)
-        return render_template('shop.html', title=_('KnowLand_Shop'))
+        return redirect('https://videoforme.ru/')
     else:
         flash('К сожалению, у вас не хватает монеток.')
         return render_template('shop.html', title=_('KnowLand_Shop'))
@@ -280,9 +277,6 @@ def reclama():
         else:
             current_user.land_coin = current_user.land_coin + 2
         db.session.commit()
-    #webbrowser.get(using=None).open_new_tab('https://mcdonalds.ru/')
-    #webbrowser.open('https://mcdonalds.ru/', new=2)
-    #return redirect(url_for('main.index'))
     return redirect("https://mcdonalds.ru/")
 
 

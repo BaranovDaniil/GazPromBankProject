@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 import logging
-import webbrowser
 from logging.handlers import SMTPHandler, RotatingFileHandler
 import os
 from flask import Flask, request, current_app
