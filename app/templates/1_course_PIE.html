@@ -4,6 +4,7 @@
 
 {% block app_content %}
     <h1>{{ _('Здесь находятся предметы 1 курса ПИЭ.') }}</h1>
+    <h2><a href="{{ url_for('main.course_1') }}">{{ _('Вернутся к списку тем для 1 курсов.') }}</a></h2>
     <p><a href="{{ url_for('main.integrals') }}">{{ _('Интегралы') }}</a></p>
     <p><a href="{{ url_for('main.definite_integral') }}">{{ _('Определенный интеграл') }}</a></p>
     <p><a href="{{ url_for('main.number_series') }}">{{ _('Числовые ряды') }}</a></p>
