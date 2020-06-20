@@ -1,0 +1,111 @@
+2020-06-20 16:59:19,315 ERROR: Exception on /user/Scorpic [GET] [in c:\users\super\knowland\knowland_start\lib\site-packages\flask\app.py:1890]
+Traceback (most recent call last):
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\sqlalchemy\engine\base.py", line 1247, in _execute_context
+    self.dialect.do_execute(
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\sqlalchemy\engine\default.py", line 588, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such column: user.gpb_coin
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\flask\app.py", line 1947, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\flask\app.py", line 2241, in preprocess_request
+    rv = func()
+  File "C:\Users\super\OneDrive\Рабочий стол\versions\gazprombank\app\main\routes.py", line 18, in before_request
+    if current_user.is_authenticated:
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\werkzeug\local.py", line 347, in __getattr__
+    return getattr(self._get_current_object(), name)
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\werkzeug\local.py", line 306, in _get_current_object
+    return self.__local()
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\flask_login\utils.py", line 26, in <lambda>
+    current_user = LocalProxy(lambda: _get_user())
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\flask_login\utils.py", line 346, in _get_user
+    current_app.login_manager._load_user()
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\flask_login\login_manager.py", line 318, in _load_user
+    user = self._user_callback(user_id)
+  File "C:\Users\super\OneDrive\Рабочий стол\versions\gazprombank\app\models.py", line 128, in load_user
+    return User.query.get(int(id))
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\sqlalchemy\orm\query.py", line 1004, in get
+    return self._get_impl(ident, loading.load_on_pk_identity)
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\sqlalchemy\orm\query.py", line 1119, in _get_impl
+    return db_load_fn(self, primary_key_identity)
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\sqlalchemy\orm\loading.py", line 284, in load_on_pk_identity
+    return q.one()
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\sqlalchemy\orm\query.py", line 3358, in one
+    ret = self.one_or_none()
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\sqlalchemy\orm\query.py", line 3327, in one_or_none
+    ret = list(self)
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\sqlalchemy\orm\query.py", line 3403, in __iter__
+    return self._execute_and_instances(context)
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\sqlalchemy\orm\query.py", line 3428, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\sqlalchemy\engine\base.py", line 984, in execute
+    return meth(self, multiparams, params)
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\sqlalchemy\sql\elements.py", line 293, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\sqlalchemy\engine\base.py", line 1097, in _execute_clauseelement
+    ret = self._execute_context(
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\sqlalchemy\engine\base.py", line 1287, in _execute_context
+    self._handle_dbapi_exception(
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\sqlalchemy\engine\base.py", line 1481, in _handle_dbapi_exception
+    util.raise_(
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\sqlalchemy\util\compat.py", line 178, in raise_
+    raise exception
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\sqlalchemy\engine\base.py", line 1247, in _execute_context
+    self.dialect.do_execute(
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\sqlalchemy\engine\default.py", line 588, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such column: user.gpb_coin
+[SQL: SELECT user.id AS user_id, user.username AS user_username, user.email AS user_email, user.password_hash AS user_password_hash, user.about_me AS user_about_me, user.last_seen AS user_last_seen, user.gpb_coin AS user_gpb_coin 
+FROM user 
+WHERE user.id = ?]
+[parameters: (5,)]
+(Background on this error at: http://sqlalche.me/e/e3q8)
+2020-06-20 17:00:02,727 INFO: GPB startup [in C:\Users\super\OneDrive\Рабочий стол\versions\gazprombank\app\__init__.py:83]
+2020-06-20 17:00:12,196 INFO: GPB startup [in C:\Users\super\OneDrive\Рабочий стол\versions\gazprombank\app\__init__.py:83]
+2020-06-20 17:00:21,657 INFO: GPB startup [in C:\Users\super\OneDrive\Рабочий стол\versions\gazprombank\app\__init__.py:83]
+2020-06-20 17:01:35,448 INFO: GPB startup [in C:\Users\super\OneDrive\Рабочий стол\versions\gazprombank\app\__init__.py:83]
+2020-06-20 17:01:47,091 INFO: GPB startup [in C:\Users\super\OneDrive\Рабочий стол\versions\gazprombank\app\__init__.py:83]
+2020-06-20 17:03:07,777 INFO: GPB startup [in C:\Users\super\OneDrive\Рабочий стол\versions\gazprombank\app\__init__.py:83]
+2020-06-20 17:03:26,247 INFO: GPB startup [in C:\Users\super\OneDrive\Рабочий стол\versions\gazprombank\app\__init__.py:83]
+2020-06-20 17:05:39,025 INFO: GPB startup [in C:\Users\super\OneDrive\Рабочий стол\versions\gazprombank\app\__init__.py:83]
+2020-06-20 17:07:22,531 INFO: GPB startup [in C:\Users\super\OneDrive\Рабочий стол\versions\gazprombank\app\__init__.py:83]
+2020-06-20 17:09:15,754 INFO: GPB startup [in C:\Users\super\OneDrive\Рабочий стол\versions\gazprombank\app\__init__.py:83]
+2020-06-20 17:10:17,476 ERROR: Exception on /auth/register [POST] [in c:\users\super\knowland\knowland_start\lib\site-packages\flask\app.py:1890]
+Traceback (most recent call last):
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\super\OneDrive\Рабочий стол\versions\gazprombank\app\auth\routes.py", line 44, in register
+    user = User(username=form.username.data, email=form.email.data, land_coin=10)
+  File "<string>", line 4, in __init__
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\sqlalchemy\orm\state.py", line 433, in _initialize_instance
+    manager.dispatch.init_failure(self, args, kwargs)
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\sqlalchemy\util\langhelpers.py", line 68, in __exit__
+    compat.raise_(
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\sqlalchemy\util\compat.py", line 178, in raise_
+    raise exception
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\sqlalchemy\orm\state.py", line 430, in _initialize_instance
+    return manager.original_init(*mixed[1:], **kwargs)
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\sqlalchemy\ext\declarative\base.py", line 839, in _declarative_constructor
+    raise TypeError(
+TypeError: 'land_coin' is an invalid keyword argument for User

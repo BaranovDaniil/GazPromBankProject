@@ -33,8 +33,13 @@ def index():
             language = ''
         post = Post(body=form.post.data, author=current_user,
                     language=language)
+        if current_user.gpb_coin is None:
+            current_user.gpb_coin = 10
+        else:
+            current_user.gpb_coin += 10
         db.session.add(post)
         db.session.commit()
+
         flash(_('Ваш пост опубликован!'))
         return redirect(url_for('main.index'))
     page = request.args.get('page', 1, type=int)
@@ -152,155 +157,67 @@ def search():
                            next_url=next_url, prev_url=prev_url)
 
 
-@bp.route('/study', methods=['GET', 'POST'])
-@login_required
-def study():
-    return render_template('study_start.html', title=_('Начинаем учиться'))
-
-
-@bp.route('/course_1', methods=['GET', 'POST'])
-@login_required
-def course_1():
-    return render_template('1_course.html', title=_('1 КУРС'))
-
-
-@bp.route('/course1_PIE', methods=['GET', 'POST'])
-@login_required
-def course1_PIE():
-    return render_template('1_course_PIE.html', title=_('1 КУРС ПИЭ'))
-
-
-@bp.route('/course1_PMI', methods=['GET', 'POST'])
-@login_required
-def course1_PMI():
-    return render_template('1_course_PMI.html', title=_('1 КУРС ПМИ'))
-
-
-@bp.route('/course1_FIIT', methods=['GET', 'POST'])
-@login_required
-def course1_FIIT():
-    return render_template('1_course_PMI.html', title=_('1 КУРС ФИИТ'))
-
-
-@bp.route('/integrals', methods=['GET', 'POST'])
-@login_required
-def integrals():
-    return render_template('integrals.html', title=_('Интегралы'))
-
-
-@bp.route('/definite_integral', methods=['GET', 'POST'])
-@login_required
-def definite_integral():
-    if current_user.land_coin is None:
-        current_user.land_coin = 1
-    else:
-        current_user.land_coin = current_user.land_coin + 1
-    db.session.commit()
-    return render_template('definite_integral.html', title=_('Определенный интеграл'))
-
-
-@bp.route('/number_series', methods=['GET', 'POST'])
-@login_required
-def number_series():
-    if current_user.land_coin is None:
-        current_user.land_coin = 1
-    else:
-        current_user.land_coin = current_user.land_coin + 1
-    db.session.commit()
-    return render_template('number_series.html', title=_('Числовые ряды'))
-
-
-@bp.route('/leibniz', methods=['GET', 'POST'])
-@login_required
-def leibniz():
-    if current_user.land_coin is None:
-        current_user.land_coin = 1
-    else:
-        current_user.land_coin = current_user.land_coin + 1
-    db.session.commit()
-    return render_template('leibniz.html', title=_('Признак Лейбница'))
-
-
 @bp.route('/coins', methods=['GET', 'POST'])
 @login_required
 def coins():
-    return render_template('_coins.html', title=_('KnowLand_Coins'))
+    return render_template('_coins.html', title=_('GPB_Coins'))
 
 
 @bp.route('/shop', methods=['GET', 'POST'])
 @login_required
 def shop():
-    return render_template('shop.html', title=_('KnowLand_Shop'))
+    return render_template('shop.html', title=_('GPB_Shop'))
 
 
 @bp.route('/shop_1', methods=['GET', 'POST'])
 @login_required
 def shop_1():
-    if current_user.land_coin >= 10:
-        current_user.land_coin -= 10
+    if current_user.gpb_coin >= 10:
+        current_user.gpb_coin -= 10
         db.session.commit()
         return redirect('https://wikium.ru/')
     else:
         flash('К сожалению, у вас не хватает монеток.')
-        return render_template('shop.html', title=_('KnowLand_Shop'))
+        return render_template('shop.html', title=_('GPB_Shop'))
 
 
 @bp.route('/shop_2', methods=['GET', 'POST'])
 @login_required
 def shop_2():
-    if current_user.land_coin >= 50:
-        current_user.land_coin -= 50
+    if current_user.gpb_coin >= 50:
+        current_user.gpb_coin -= 50
         db.session.commit()
         return redirect('https://cutt.ly/OyX5vBz')
     else:
         flash('К сожалению, у вас не хватает монеток.')
-        return render_template('shop.html', title=_('KnowLand_Shop'))
+        return render_template('shop.html', title=_('GPB_Shop'))
 
 
 @bp.route('/shop_3', methods=['GET', 'POST'])
 @login_required
 def shop_3():
-    if current_user.land_coin >= 50:
-        current_user.land_coin -= 50
+    if current_user.gpb_coin >= 50:
+        current_user.gpb_coin -= 50
         db.session.commit()
         return redirect('https://videoforme.ru/')
     else:
         flash('К сожалению, у вас не хватает монеток.')
-        return render_template('shop.html', title=_('KnowLand_Shop'))
+        return render_template('shop.html', title=_('GPB_Shop'))
 
 
-@bp.route('/reclama', methods=['GET', 'POST'])
-def reclama():
-    if current_user.is_authenticated:
-        if current_user.land_coin is None:
-            current_user.land_coin = 2
-        else:
-            current_user.land_coin = current_user.land_coin + 2
-        db.session.commit()
-    return redirect("https://mcdonalds.ru/")
-
-
-@bp.route('/test', methods=['GET', 'POST'])
+@bp.route('/like', methods=['GET','POST'])
 @login_required
-def test():
-    return render_template('test.html')
-
-
-@bp.route('/testgood', methods=['GET', 'POST'])
-@login_required
-def testgood():
-    if current_user.land_coin is None:
-        current_user.land_coin = 5
+def like():
+    if current_user.gpb_coin is None:
+        current_user.gpb_coin = 1
     else:
-        current_user.land_coin = current_user.land_coin + 5
+        current_user.gpb_coin += 1
     db.session.commit()
-    flash('Вы успешно прошли тест!')
-    return render_template('study_start.html')
+    return render_template('index.html')
 
 
-@bp.route('/testbad', methods=['GET', 'POST'])
-@login_required
-def testbad():
-    flash('Вы провалили тест!')
-    return render_template('study_start.html')
+
+
+
+
 

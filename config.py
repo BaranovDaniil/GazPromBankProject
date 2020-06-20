@@ -21,3 +21,5 @@ class Config(object):
     ELASTICSEARCH_URL = os.environ.get('ELASTICSEARCH_URL')
     POSTS_PER_PAGE = 25
     LOG_TO_STDOUT = os.environ.get('LOG_TO_STDOUT')
+
+

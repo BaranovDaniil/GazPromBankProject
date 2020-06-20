@@ -1,8 +1,0 @@
-{% extends "base.html" %}
-<meta charset =  utf-8>
-{% import 'bootstrap/wtf.html' as wtf %}
-
-{% block app_content %}
-    <h1>{{ _('Начинаем выбирать курс для подготовки.') }}</h1>
-    <h2><a href="{{ url_for('main.course_1') }}">{{ _('1 КУРС') }}</a></h2>
-{% endblock %}

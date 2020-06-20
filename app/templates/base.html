@@ -1,13 +1,13 @@
 {% extends 'bootstrap/base.html' %}
 <meta charset =  utf-8>
 {% block title %}
-    {% if title %}{{ title }} - Knowland{% else %}{{ _('Добро пожаловать в Knowland') }}{% endif %}
+    {% if title %}{{ title }} - GPB{% else %}{{ _('Добро пожаловать в GazPromBank') }}{% endif %}
 {% endblock %}
 
 {% block head %}
 
     <title>
-        Домашняя страница - Knowland
+        Домашняя страница - GPB
     </title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,31 +16,31 @@
     
     <style>
         hr {
-        border: none;
-        color: #949494;
-        background-color: #949494;
+        border-radius: 10px;
+        color: #FFFFFF;
+        background-color: #FFFFFF;
         height: 1px;
         }
 
         #nav-MyFont{
-        font-family:Georgia, 'Times New Roman', Times, serif;
-        font-size:medium;
+        font-family:'Proxima Nova Bold', serif;
+        font-size:large;
         }
 
         body{
-        font-family:Verdana, Geneva, Tahoma, sans-serif;
-	    background-color: #EEEEEE;
+        font-family:'Proxima Nova Bold', sans-serif;
+	    background-color: #FFFFFF;
         }
 
         #DIV_M{
             border-radius: 10px;
-            background-color: #E6E6E6;
+            background-color: #CEDFF4;
         }
 
         .alert-info {
-            color: #31708f;
-            background-color: #C2E1D2;
-            border-color: #6CC499;
+            color: #0057B6;
+            background-color: #E6EAF0;
+            border-color: #EEF1F3;
         }
 
         p {
@@ -54,7 +54,7 @@
 {% endblock %}
 
 {% block navbar %}
-    <nav class="navbar navbar-fixed-top navbar-inverse" style=" background-color: #353535" id="nav-MyFont">
+    <nav class="navbar navbar-fixed-top navbar-inverse" style=" background-color: #262C40" id="nav-MyFont">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -63,18 +63,17 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{{ url_for('main.index') }}">Knowland</a>
+                <a class="navbar-brand" href="{{ url_for('main.index') }}">GazPromBank</a>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li><a href="{{ url_for('main.index') }}">{{ _('Домашняя страница') }}</a></li>
                     <li><a href="{{ url_for('main.explore') }}">{{ _('Чат') }}</a></li>
-                    <li><a href="{{ url_for('main.study') }}">{{ _('Начинаем учиться') }}</a></li>
-                    <li><a href="{{ url_for('main.coins') }}">{{ _('KnowLand_Coins') }}</a></li>
+                    <li><a href="{{ url_for('main.coins') }}">{{ _('GPB_Coins') }}</a></li>
                     {% if current_user.is_anonymous %}
                     { }
                     {% else %}
-                    <li><a href="{{ url_for('main.shop') }}">Ваш Баланс:{{current_user.land_coin }}Ⓚ</a></li>
+                    <li><a href="{{ url_for('main.shop') }}">Ваш Баланс:{{current_user.gpb_coin }}Ⓚ</a></li>
                     {% endif %}
                 </ul>
                 <!-- {% if g.search_form %}
@@ -98,17 +97,7 @@
 {% endblock %}
 
 {% block content %}
-
     <div class="row">
-        <div class="col-md-2"><!--блок для рекламы-->
-            <br>
-            <br>
-            <br>
-            <div>
-                <img class = 'ads_ad_photo_adv'
-                     src="https://www.meme-arsenal.com/memes/083fdb97e7f2ed07af30aa359b1b1e5a.jpg" alt="здесь могла быть ваша реклама" width="225" height="500"/>
-            </div>
-        </div>
 
         <div class="container col-md-8" id="DIV_M">
             <br>
@@ -127,18 +116,9 @@
             <br>
             <br>
         </div>
-        <div class="col-md-2"><!--блок для рекламы-->
-            <br>
-            <br>
-            <br>
-            <div>
-                <a href="{{ url_for('main.reclama') }}" target="_blank"><img class = 'ads_ad_photo'
-                     src="https://i.pinimg.com/originals/64/d0/2b/64d02baf5ab0ca725d493dee762dc0b7.jpg" alt="здесь могла быть ваша реклама" width="225" height="500"/>
-                </a>
-            </div>
-        </div>
+
     </div>
-    <footer style="background-color: #EEEEEE; border-radius: 10px; padding: 2%;" align="center"> danyabaranov2020@gmail.com - Почта тех.поддержки.</footer>
+
 {% endblock %}
 
 <!-- {% block scripts %}

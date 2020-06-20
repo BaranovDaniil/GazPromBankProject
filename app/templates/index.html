@@ -12,6 +12,7 @@
         <hr>
         {% for post in posts %}
             {% include '_post.html' %}
+            <a href="{{ url_for('main.like') }}">{{ _('Like') }}</a>
         {% endfor %}
         <br>
         <hr>

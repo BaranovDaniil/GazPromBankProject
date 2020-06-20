@@ -72,7 +72,7 @@ class User(UserMixin, db.Model):
         primaryjoin=(followers.c.follower_id == id),
         secondaryjoin=(followers.c.followed_id == id),
         backref=db.backref('followers', lazy='dynamic'), lazy='dynamic')
-    land_coin = db.Column(db.Integer, default=0)
+    gpb_coin = db.Column(db.Integer, default=0)
 
     def __repr__(self):
         return '<User {}>'.format(self.username)
@@ -135,6 +135,13 @@ class Post(SearchableMixin, db.Model):
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     language = db.Column(db.String(5))
+    likes = db.relationship('Like', backref='author', lazy='dynamic')
 
     def __repr__(self):
         return '<Post {}>'.format(self.body)
+
+
+class Like(SearchableMixin, db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    count = db.Column(db.Integer, default=1)
+    post_id = db.Column(db.Integer, db.ForeignKey('post.id'))

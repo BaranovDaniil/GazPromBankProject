@@ -1,0 +1,116 @@
+2020-06-20 17:13:59,053 ERROR: Exception on /auth/register [POST] [in c:\users\super\knowland\knowland_start\lib\site-packages\flask\app.py:1890]
+Traceback (most recent call last):
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\super\OneDrive\Рабочий стол\versions\gazprombank\app\auth\routes.py", line 44, in register
+    user = User(username=form.username.data, email=form.email.data, gpb_coin=10)
+  File "<string>", line 4, in __init__
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\sqlalchemy\orm\state.py", line 433, in _initialize_instance
+    manager.dispatch.init_failure(self, args, kwargs)
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\sqlalchemy\util\langhelpers.py", line 68, in __exit__
+    compat.raise_(
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\sqlalchemy\util\compat.py", line 178, in raise_
+    raise exception
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\sqlalchemy\orm\state.py", line 430, in _initialize_instance
+    return manager.original_init(*mixed[1:], **kwargs)
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\sqlalchemy\ext\declarative\base.py", line 839, in _declarative_constructor
+    raise TypeError(
+TypeError: 'land_coin' is an invalid keyword argument for User
+2020-06-20 17:14:29,620 INFO: GPB startup [in C:\Users\super\OneDrive\Рабочий стол\versions\gazprombank\app\__init__.py:83]
+2020-06-20 17:14:43,468 INFO: GPB startup [in C:\Users\super\OneDrive\Рабочий стол\versions\gazprombank\app\__init__.py:83]
+2020-06-20 17:15:08,262 INFO: GPB startup [in C:\Users\super\OneDrive\Рабочий стол\versions\gazprombank\app\__init__.py:83]
+2020-06-20 17:22:44,012 INFO: GPB startup [in C:\Users\super\OneDrive\Рабочий стол\versions\gazprombank\app\__init__.py:83]
+2020-06-20 17:23:38,568 ERROR: Exception on /shop_1 [GET] [in c:\users\super\knowland\knowland_start\lib\site-packages\flask\app.py:1890]
+Traceback (most recent call last):
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\super\OneDrive\Рабочий стол\versions\gazprombank\app\main\routes.py", line 174, in shop_1
+    if current_user.gpb_coin >= 10:
+TypeError: '>=' not supported between instances of 'NoneType' and 'int'
+2020-06-20 17:24:59,340 INFO: GPB startup [in C:\Users\super\OneDrive\Рабочий стол\versions\gazprombank\app\__init__.py:83]
+2020-06-20 17:33:26,094 INFO: GPB startup [in C:\Users\super\OneDrive\Рабочий стол\versions\gazprombank\app\__init__.py:83]
+2020-06-20 17:33:48,488 INFO: GPB startup [in C:\Users\super\OneDrive\Рабочий стол\versions\gazprombank\app\__init__.py:83]
+2020-06-20 17:33:54,752 INFO: GPB startup [in C:\Users\super\OneDrive\Рабочий стол\versions\gazprombank\app\__init__.py:83]
+2020-06-20 17:34:00,605 INFO: GPB startup [in C:\Users\super\OneDrive\Рабочий стол\versions\gazprombank\app\__init__.py:83]
+2020-06-20 17:34:12,129 ERROR: Exception on /like [GET] [in c:\users\super\knowland\knowland_start\lib\site-packages\flask\app.py:1890]
+Traceback (most recent call last):
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\super\OneDrive\Рабочий стол\versions\gazprombank\app\main\routes.py", line 211, in like
+    if post.like is None:
+NameError: name 'post' is not defined
+2020-06-20 17:34:57,908 INFO: GPB startup [in C:\Users\super\OneDrive\Рабочий стол\versions\gazprombank\app\__init__.py:83]
+2020-06-20 17:35:03,551 ERROR: Exception on /like [GET] [in c:\users\super\knowland\knowland_start\lib\site-packages\flask\app.py:1890]
+Traceback (most recent call last):
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\super\OneDrive\Рабочий стол\versions\gazprombank\app\main\routes.py", line 211, in like
+    if posts.like is None:
+NameError: name 'posts' is not defined
+2020-06-20 17:35:50,132 INFO: GPB startup [in C:\Users\super\OneDrive\Рабочий стол\versions\gazprombank\app\__init__.py:83]
+2020-06-20 17:35:56,003 ERROR: Exception on /like [GET] [in c:\users\super\knowland\knowland_start\lib\site-packages\flask\app.py:1890]
+Traceback (most recent call last):
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\users\super\knowland\knowland_start\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\super\OneDrive\Рабочий стол\versions\gazprombank\app\main\routes.py", line 211, in like
+    if like is None:
+UnboundLocalError: local variable 'like' referenced before assignment
+2020-06-20 17:37:45,538 INFO: GPB startup [in C:\Users\super\OneDrive\Рабочий стол\versions\gazprombank\app\__init__.py:83]
